@@ -42,12 +42,12 @@ for v,u in zip(v_list,u_list):
 
     #Calculo la altura máxima respecto a cada velocidad inicial
     g = 9.8
-    print("Altura máxima de  velocidad",v)
+    print("Altura máxima de velocidad",v)
     ymax = (v*v/g)-0.5*g*(v/g)*(v/g)
     print(ymax)
 
     #Calculo el tiempo de vuelo para cada velocidad inicial
-    print("Tiempo de vuelo de cada velocidad",v)
+    print("Tiempo de vuelo de velocidad",v)
     t_flight = 2*v/g
     print(t_flight)
 
