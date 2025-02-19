@@ -29,9 +29,9 @@ def draw_trajectory(v,u):
         
     #Genero el gráfico, le añado título y coordenadas X y Y (con unidades), por último hago que en la X hago que solo esten marcados los valores de la u_list
     plt.plot(x,y)
-plt.xlabel('Puntos de separación')
-plt.ylabel('Height (m)')
-plt.title('Projectile motion')
+plt.xlabel("Puntos de separación")
+plt.ylabel("Height (m)")
+plt.title("Projectile motion")
 plt.xticks(u_list)
 
 #Lista de velocidades iniciales m/s
@@ -52,5 +52,5 @@ for v,u in zip(v_list,u_list):
     print(t_flight)
 
 #Muestra la gráfica con una leyenda
-plt.legend(['20', '40', '60'])
+plt.legend(["20", "40", "60"])
 plt.show()
