@@ -36,7 +36,7 @@ plt.xticks(u_list)
 
 #Lista de velocidades iniciales m/s
 v_list = [20, 40, 60]
-#Itero las las velocidades iniciales y la separación de las distintas caídas libres
+#Itero las velocidades iniciales y la separación de las distintas caídas libres
 for v,u in zip(v_list,u_list):
     draw_trajectory(v,u)
 
