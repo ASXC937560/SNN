@@ -1,4 +1,4 @@
-#Ejemplo de caída libre:
+#Ejemplo de caída libre
 
 #Importo la libreria matemática (numpy) y la libreria de graficar (matplotlib) 
 import numpy as np
