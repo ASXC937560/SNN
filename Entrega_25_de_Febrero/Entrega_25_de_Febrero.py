@@ -1,5 +1,5 @@
 
-# Movimiento harmonico simple con k/m =1
+# Movimiento armonico simple con k/m =1
 
 
 
@@ -11,21 +11,21 @@ k = 10.0
 #Condiciones iniciales
 x0 = 0.1
 v0 = 0.0
-#Calcula la energia inicial (con las condiciones iniciales)
+#Calculo la energia inicial (con las condiciones iniciales)
 E0 = (m/2.0)*v0*v0+(k/2)*x0*x0
 
 print('\n--------------------------------------------------------')
 print('SIMPLE MD SIMULATION OF A SINGLE PARTICLE IN HARMONIC TRAP')
 print('----------------------------------------------------------')
-#Los numeros son exagerados pero es para asegurar el resultado de los gráficos
+
 #Input de cada paso
 dt = 0.0001
 #Tiempo final
 ntot = 100000
-
+#Los numeros son exagerados pero es para asegurar el resultado de los gráficos
 print('Simulation time will be',dt*ntot,' sec')
 
-#Hago un array vacio de posición,velocidad,tiempo,velocidad media (v2), velocidad de medio salto (v_hk), energia y RE (relación respecto a la energia inicial)
+#Hago un array vacio de posición,velocidad,tiempo,velocidad media (v2), velocidad de medio salto (v_hk), energia y RE (relación de la energia respecto a la energia inicial)
 x = np.zeros(ntot+1)
 v = np.zeros(ntot+1)
 t = np.zeros(ntot+1)
@@ -44,10 +44,10 @@ RE[0] = 1
 #Calculo la aceleración y velocidad despues de dt/2
 a = -x[0]
 v_hk[0] = v[0]+(dt/2.0)*a
-#Calculo la nueva posición y aceleración en el primer paso con t+dt (ecuación especial de Feynman)
+#Calculo la nueva posición y hago t+dt 
 x[1] = x[0]+dt*v_hk[0]
 t[1] = t[0]+dt
-#Calcula la aceleración en el punto 1 para calcular el v_hk en el siguiente dt/2 (damos de tiempo dt)
+#Calculo la aceleración en el punto 1 para calcular el v_hk en el siguiente dt/2 (damos de tiempo dt)
 a = -x[1]
 v_hk[1] = v_hk[0]+a*dt
 v2[1]=(v_hk[1]+v_hk[0])/2 #Opcional pero lo pongo para tener la idea de como se calcula las velocidades en los sitios que también estan las posiciones calculadas 
@@ -71,11 +71,9 @@ while i<ntot:
     #Vemos el paso y sus correspondientes posiciones,tiempos, velocidades, energias y relacion de energia respecto a la inicial
     print('Step',i,' t= ',round(t[i],3),' x=',round(x[i],3),"v2=",round(v2[i],3),"E=",round(v2[i],3),"RE=",round(v2[i],3))
     i=i+1
-#Lo mismo que la línia 68, pero se ve que el último punto no tiene sentido ya que al no poder calcular v2 hace que sea 0 debido a que es del array de ceros, dando RE=0
+#Lo mismo que la línia 71, pero se ve que el último punto no tiene sentido ya que al no poder calcular v2, coge v2 igual a 0 debido al array de ceros del inicio, dando RE=0
 print('Final Step', i,' t= ',round(t[i],3),' x=',round(x[i],3),"v2=",round(v2[i],3),"RE=",round(v2[i],3))
 print('\nShowing plot with results')
-
-
 
 plt.figure(1)
 
