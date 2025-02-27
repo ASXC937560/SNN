@@ -11,4 +11,4 @@ Entrega de los componentes de la estructura desconocida del VMD.
 -Por último, en el fichero "Fosforo_con_4_Oxigenos__C_N_O_P_no_es_ni_lipido_prot_azucar_nucleotido" se puden ver las aguas, iones Zn y Mg de antes y de forma adicional PO4-3 y una estructura que no se que es, la cual contiene C,N,O y P (está enlazada a un PO3, por eso tiene P), según el programa no es ni un azucar, lipido, nucleotido ni proteina.
 
 
-PD:Los otros ficheros son el problema y la versión .VMD con los cambios.
+PD:Los otros ficheros son el problema y la versión .VMD con los cambios ("versión_con_todo.vmd").
