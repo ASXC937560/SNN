@@ -81,4 +81,3 @@ for v in range(0,4):
     plt.ylabel(r'$\psi(x)$')
     plt.show()
 
-print("Bye")
