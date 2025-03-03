@@ -1,5 +1,5 @@
 
-# Ecuación de Schördinger con el potencial de Lennard-Jones
+#Ecuación de Schördinger con el potencial de Lennard-Jones
 #Usamos unidades atómicas
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,7 +12,7 @@ def getV(x):
     potvalue = 4*epsilon*((sigma/x)**12-(sigma/x)**6)
     return potvalue
 
-#Hacemos la la matriz (discretizamos en n puntos de 0 a n-1), el potencial de Lennard-Jones solo se aplica en los componente i,i
+#Hacemos la matriz (discretizamos en n puntos de 0 a n-1), el potencial de Lennard-Jones solo se aplica en los componente i,i de la matriz.
 def Eq(n,h,x):
     F = np.zeros([n,n])
     for i in range(0,n):
@@ -46,19 +46,19 @@ print("Diagonalizing...")
 eigenValues, eigenVectors = np.linalg.eig(F)
 
 #Ordenamos los resultados a partir de los valores propios
-# w son los autovalores ordenados vs son los autovectores ordenados
+#w son los autovalores ordenados, vs son los autovectores ordenados
 idx = eigenValues.argsort()[::-1]   
 w = eigenValues[idx]
 vs = eigenVectors[:,idx]
 
-#El autovalor no es directamente la energia, hacemos esta operación para obtener la energia
+#El autovalor no es directamente la energía, hacemos esta operación para obtener la energía
 E = - w/(2.0*h**2)
 
 #Obtenemos el valor de las energias
 print("RESULTS:")
 for k in range(0,4):
 	print("State ",k," Energy = %.3f" %E[k])
-#Hacemos una lista vacia on npoints elements para la función de onda
+#Hacemos una lista vacía con npoints elements para la función de onda
 psi = [None]*npoints
 
 #Calculamos la función de onda normalizada
