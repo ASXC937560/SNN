@@ -1,19 +1,8 @@
-# --------------------------------------------------------------------
-# INTRODUCTION TO MONTE CARLO WITH PYTHON
-# March 2025
-# Example program by Jordi Faraudo
-# Simulation of a sequence of configurations for an ideal 2 state system
-# Calculation of Energy and magnetization of a configuration
-# ---------------------------------------------------------------------
-#
-# Here we import the numpy mathematical library and the plots library
-# as in the other examples in the course
-#
+
 import numpy as np
 from numpy.random import rand
 import matplotlib.pyplot as plt
 
-#
 # Function implementing the method (Metropolis Monte Carlo) and model
 #      The state with s=-1 has zero energy 
 #      The state with s=+1 has energy 1
