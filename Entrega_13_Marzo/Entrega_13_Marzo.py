@@ -62,7 +62,6 @@ def calcMag(config):
 #
 # MAIN PROGRAM
 #
-#
 #  Here we set initial conditions and control the flow of the simulation
 
 #size of the lattice
