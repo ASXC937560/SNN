@@ -30,7 +30,7 @@ def mcmove(config, N, beta):
                     ## (acceptance probability is given by Boltzmann factor with beta = 1/kBT)
                     if cost < 0: 
                         s = random.choice([s*(-1), s])  
-#añado que estando en el estado s=+1 (E=1) puede ir al estado s=-1 (E=0) o mantenerse en el estado s=+1 (va al degenerado) en caso de aumentar la degeneración g hay que añadir otra s ya que puede ir a otro degnerado, es decir, la cantidad de s = g-1
+#añado que estando en el estado s=+1 (E=1) puede ir al estado s=-1 (E=0) o mantenerse en el estado s=+1 (va al degenerado) en caso de aumentar la degeneración g hay que añadir otra s ya que puede ir a otro degenerado, es decir, la cantidad de s = g-1
                     elif rand() < g*np.exp(-cost*beta): #tiene la degeneración del estado excitado
                         s = s*(-1)
                     config[a, b] = s
