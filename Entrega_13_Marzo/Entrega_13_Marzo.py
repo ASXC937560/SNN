@@ -62,7 +62,6 @@ def calcMag(config):
     '''Magnetization of a given configuration'''
     mag = np.sum(config)
     return mag
-#
 # MAIN PROGRAM
 #  Here we set initial conditions and control the flow of the simulation
 
