@@ -1,5 +1,6 @@
 
 import numpy as np
+import random
 from numpy.random import rand
 import matplotlib.pyplot as plt
 
@@ -8,6 +9,7 @@ import matplotlib.pyplot as plt
 #      The state with s=+1 has energy 1
 
 g=2 #g es la degeneración del estado excitado, se puede modificar por el valor deseado
+
 def mcmove(config, N, beta):
         #Loop with a size equal to spins in the system
         for i in range(N):
@@ -18,16 +20,17 @@ def mcmove(config, N, beta):
                     ## Read state
                     s =  config[a, b]
                     #calculate energy cost of fliping current state
-                    if (s<0):
-                       #cost of exciting the system  
-                       cost=1.0
+                    if (s>0):
+                       #cost of exciting the system
+                       cost = -1.0
                     else:
                        #cost of decay
-                       cost=-1.0
+                       cost= 1.0
                     #flip spin or not depending on the cost and its Boltzmann factor
                     ## (acceptance probability is given by Boltzmann factor with beta = 1/kBT)
-                    if cost < 0:
-                        s = s*(-1)
+                    if cost < 0: 
+                        s = random.choice([s*(-1), s])  
+#añado que estando en el estado s=+1 (E=1) puede ir al estado s=-1 (E=0) o mantenerse en el estado s=+1 (va al degenerado) en caso de aumentar la degeneración g hay que añadir otra s ya que puede ir a otro degnerado, es decir, la cantidad de s = g-1
                     elif rand() < g*np.exp(-cost*beta): #tiene la degeneración del estado excitado
                         s = s*(-1)
                     config[a, b] = s
@@ -69,7 +72,7 @@ N = 64
 print("MC Simulation two State system")
 print("------------------------------")
 print("Epsilon = Energy exited state")
-temp = 0.5
+temp = 4.0
 msrmnt = 100
 #Init Magnetization and Energy
 step=[]
