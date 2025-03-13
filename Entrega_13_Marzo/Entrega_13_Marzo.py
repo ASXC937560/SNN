@@ -21,10 +21,10 @@ def mcmove(config, N, beta):
                     s =  config[a, b]
                     #calculate energy cost of fliping current state
                     if (s>0):
-                       #cost of exciting the system
+                       #cost of decay the system
                        cost = -1.0
                     else:
-                       #cost of decay
+                       #cost of exciting
                        cost= 1.0
                     #flip spin or not depending on the cost and its Boltzmann factor
                     ## (acceptance probability is given by Boltzmann factor with beta = 1/kBT)
