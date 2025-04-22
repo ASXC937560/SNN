@@ -1,1 +1,1 @@
-Resultados simulación proteina 33 del 4.
+Resultados de la simulación proteina ubiquitina humana hecha el 33 del abril.
