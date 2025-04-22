@@ -1,1 +1,1 @@
-Resultados de la simulación proteina ubiquitina humana hecha el 22 del abril.
+Resultados de la simulación de la proteina ubiquitina humana hecha el 22 del abril.
